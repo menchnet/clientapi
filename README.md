@@ -8,6 +8,9 @@ Outline of usage:
 
 1. Create a module in python for your computer vision sensor:
 
+Example: sensor1.py
+
+```python
 # import libraries here, imports are restricted by a whitelist
 # you can not access io or other system operations, the code
 # is executed within a docker container running alpine and running
@@ -40,22 +43,22 @@ def onEvent(ssapi, evt):
         # ...
         # send a confidence value 
         ssapi.publish("score", some_value)
-    
+```    
     
 2. Upload the module to your account at menchnet
 
 
-
-
+```python
 import menchnet
 
 # initialization
 menchnet.login(username, api-key)
 menchnet.upload("/path/to/sensor1.py", "module_example_above.py")
-
+```
 
 3. Use the module you uploaded
 
+```python
 # activation/listen/deactivation
 menchnet.login(username, api-key)
 def callback(some_value):
@@ -67,13 +70,16 @@ menchnet.activate("sensor1", url="...")
 ...
 
 menchnet.deactivate("sensor1")
-
+```
 
 4. Remove the module
 
+```python
+
+import menchnet
 menchnet.login(username, api-key)
 menchnet.remove("sensor1")
-
+```
 
 
 
