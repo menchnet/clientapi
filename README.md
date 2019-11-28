@@ -10,6 +10,8 @@ Outline of usage:
 
 Example: sensor1.py
 
+#### Code to be uploaded and executed on the menchnet cloud
+
 ```python
 # import libraries here, imports are restricted by a whitelist
 # you can not access io or other system operations, the code
